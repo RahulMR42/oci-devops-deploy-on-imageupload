@@ -9,6 +9,6 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    version = os.getenv('image_url', default = '0.0.9')
-    return {"Message": "Its me Rahul","Version":version}
+    version = os.getenv('image_url', default = '0.0.12')
+    return {"Message": "demo with Service Connector Hub","Version":version}
 
