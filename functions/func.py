@@ -20,7 +20,7 @@ class devops:
 
     def invoke_deployment(self, image_version, oci_deployment_pipeline_id):
         try:
-            devops_client = oci.devops.DevopsClient({}, signer=self.signer)
+            devops_client = oci.devops.DevopsClient(config={'region': self.region}, signer = self.signer)
             deployment_timestamp = datetime.datetime.now().isoformat()
             logging.getLogger().info('Initialized devops client')
             create_deployment_response = devops_client.create_deployment(
